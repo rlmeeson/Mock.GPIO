@@ -74,12 +74,10 @@ def setmode(mode):
     BCM   - Use Broadcom GPIO 00..nn numbers
     """
     # GPIO = GPIO()
+    global _mode, setModeDone
     time.sleep(1)
-    if(mode == BCM):
-        setModeDone = True
+    if(mode == BCM) or (mode == BOARD):
         _mode = mode
-
-    elif (mode == BOARD):
         setModeDone = True
     else:
         setModeDone = False
